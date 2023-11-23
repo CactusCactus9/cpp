@@ -6,11 +6,11 @@
 #    By: abelkace <abelkace@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/20 15:11:02 by abelkace          #+#    #+#              #
-#    Updated: 2023/11/20 15:11:05 by abelkace         ###   ########.fr        #
+#    Updated: 2023/11/21 11:43:56 by abelkace         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= occf
+NAME	= fixed
 
 SRCS	= main.cpp Fixed.cpp
 
