@@ -6,13 +6,13 @@
 /*   By: abelkace <abelkace@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 11:25:51 by abelkace          #+#    #+#             */
-/*   Updated: 2023/11/24 20:08:52 by abelkace         ###   ########.fr       */
+/*   Updated: 2023/11/24 23:47:16 by abelkace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::Fixed() : _num(1200){
+Fixed::Fixed() : _num(0){
 }
 
 //Comparison Operators
@@ -75,17 +75,18 @@ Fixed	Fixed::operator--(int){
 	return (tmp);
 }
 
+
 //min-max
-static Fixed&	min(Fixed &ref1, Fixed &ref2){
+Fixed& Fixed::min(Fixed &ref1, Fixed &ref2){
+	return (ref1 < ref2) ? ref1 : ref2;
+}
+const Fixed&	Fixed::min(const Fixed &ref1, const Fixed &ref2){
 	return (ref1.getRawBits() < ref2.getRawBits()) ? ref1 : ref2;
 }
-static const Fixed&	min(const Fixed &ref1, const Fixed &ref2){
-	return (ref1.getRawBits() < ref2.getRawBits()) ? ref1 : ref2;
-}
-static Fixed&	max(Fixed &ref1, Fixed &ref2){
+Fixed&	Fixed::max(Fixed &ref1, Fixed &ref2){
 	return (ref1.getRawBits() > ref2.getRawBits()) ? ref1 : ref2;
 }
-static const Fixed&	max(const Fixed &ref1, const Fixed &ref2){
+const Fixed&	Fixed::max(const Fixed &ref1, const Fixed &ref2){
 	return (ref1.getRawBits() > ref2.getRawBits()) ? ref1 : ref2;
 }
 Fixed::Fixed(const int n){
@@ -110,19 +111,18 @@ float	Fixed::toFloat(void)const{
 	return ((float)(this->getRawBits()) / (1 << this->_n));
 }
 
-int		Fixed::toInt(void) const{
-	return ((int)roundf(this->_num >> this->_n));
-}
+// int		Fixed::toInt(void) const{
+// 	return ((int)roundf(this->_num >> this->_n));
+// }
 
 
 Fixed::Fixed(const Fixed &obj)
 {
-	std::cout << "Copy constructor called" << std::endl;
 	*this = obj;//same class..call Copy assignment operator called
 }
 
 Fixed&	Fixed::operator=(const Fixed &src){
-	std::cout << "Copy assignment operator called" << std::endl;
+	// std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &src)
 		this->_num = src.getRawBits();
 	return (*this);

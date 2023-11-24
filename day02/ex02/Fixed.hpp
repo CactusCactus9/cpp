@@ -6,7 +6,7 @@
 /*   By: abelkace <abelkace@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 11:15:02 by abelkace          #+#    #+#             */
-/*   Updated: 2023/11/24 19:45:00 by abelkace         ###   ########.fr       */
+/*   Updated: 2023/11/24 23:41:53 by abelkace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,11 @@
 #include <iostream>
 #include <cmath>
  
-
 class	Fixed
 {
 private:
 	int					_num;
-	static const int	_n = 8;
+	static const int	_n = 8;//static attribute shared and modifiable by all objs 
 public:
 	Fixed();
 	Fixed(const int n);
@@ -43,14 +42,18 @@ public:
 	Fixed	&operator--();
 	Fixed	operator--(int);
 
-	static Fixed&	min(Fixed &ref1, Fixed &ref2);
+	static Fixed&	min(Fixed &ref1, Fixed &ref2);//ad hoc polymorphism
+	static const Fixed&	min(const Fixed &ref1, const Fixed &ref2); //const obj takes const and non but non const cant take const
+	static Fixed&	max(Fixed &ref1, Fixed &ref2);
+	static const Fixed&	max(const Fixed &ref1, const Fixed &ref2);
+	
 	
 	Fixed(const Fixed &obj);
 	Fixed	&operator = (const Fixed& src);//fixed& cuz a = b = c
 	int		getRawBits(void)const;
 	void	setRawBits(int const raw);
 	float	toFloat(void)const;
-	int		toInt(void) const;
+	// int		toInt(void) const;
 	
 	~Fixed();
 };
