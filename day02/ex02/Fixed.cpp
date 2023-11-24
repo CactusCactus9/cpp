@@ -6,13 +6,15 @@
 /*   By: abelkace <abelkace@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 11:25:51 by abelkace          #+#    #+#             */
-/*   Updated: 2023/11/24 15:22:49 by abelkace         ###   ########.fr       */
+/*   Updated: 2023/11/24 20:08:52 by abelkace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::Fixed() : _num(0){}
+Fixed::Fixed() : _num(1200){
+}
+
 //Comparison Operators
 bool	Fixed::operator>(const Fixed& other)const{
 	return (this->getRawBits() > other.getRawBits());
@@ -53,11 +55,39 @@ Fixed	Fixed::operator/(Fixed const &ref) const{
 }
 
 
-//Increment/Decrement
-Fixed	Fixed::operator++(Fixed const )
+//Increment-Decrement Operators
+Fixed	&Fixed::operator++(){
+	this->_num++;
+	return (*this); //increment directly and returns reference to the obj
+}
+Fixed	Fixed::operator++(int/*dummy parameter*/){
+	Fixed	tmp(*this);
+	this->_num++;
+	return (tmp); //returns the value 
+}
+Fixed	&Fixed::operator--(){
+	this->_num--;
+	return (*this);
+}
+Fixed	Fixed::operator--(int){
+	Fixed	tmp(*this);//copy const
+	this->_num--;
+	return (tmp);
+}
 
-
-
+//min-max
+static Fixed&	min(Fixed &ref1, Fixed &ref2){
+	return (ref1.getRawBits() < ref2.getRawBits()) ? ref1 : ref2;
+}
+static const Fixed&	min(const Fixed &ref1, const Fixed &ref2){
+	return (ref1.getRawBits() < ref2.getRawBits()) ? ref1 : ref2;
+}
+static Fixed&	max(Fixed &ref1, Fixed &ref2){
+	return (ref1.getRawBits() > ref2.getRawBits()) ? ref1 : ref2;
+}
+static const Fixed&	max(const Fixed &ref1, const Fixed &ref2){
+	return (ref1.getRawBits() > ref2.getRawBits()) ? ref1 : ref2;
+}
 Fixed::Fixed(const int n){
 	this->_num = n << this->_n;
 	// std::cout << "Int constructor called" << std::endl;
