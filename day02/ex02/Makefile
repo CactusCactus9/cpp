@@ -5,14 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: abelkace <abelkace@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/11/15 19:09:16 by abelkace          #+#    #+#              #
-#    Updated: 2023/11/24 13:05:21 by abelkace         ###   ########.fr        #
+#    Created: 2023/11/24 11:00:27 by abelkace          #+#    #+#              #
+#    Updated: 2023/11/24 11:00:29 by abelkace         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= harl
+NAME	= fixed
 
-SRCS	= main.cpp Harl.cpp
+SRCS	= main.cpp Fixed.cpp
 
 OBJS	= $(SRCS:.cpp=.o)
 
@@ -20,14 +20,13 @@ CXX	 = c++
 
 CXXFLAGS = -Wall -Werror -Wextra  -std=c++98
 
-%.o: %.cpp Harl.hpp
-	$(CXX) $(CXXFLAGS) -o $@ -c $<
-	
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@$(CXX) $(CXXFLAGS) $(OBJS) -o $@
+	@$(CXX) $(OBJS) -o $@
 
+%.o: %.cpp Fixed.hpp
+	$(CXX) $(CXXFLAGS) -o $@ -c $<
 
 clean:
 	@rm -f $(OBJS)

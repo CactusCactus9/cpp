@@ -5,25 +5,67 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: abelkace <abelkace@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/20 15:09:44 by abelkace          #+#    #+#             */
-/*   Updated: 2023/11/24 14:05:47 by abelkace         ###   ########.fr       */
+/*   Created: 2023/11/24 11:25:51 by abelkace          #+#    #+#             */
+/*   Updated: 2023/11/24 15:22:49 by abelkace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::Fixed() : _num(0){
-	std::cout << "Default constructor called" << std::endl;
+Fixed::Fixed() : _num(0){}
+//Comparison Operators
+bool	Fixed::operator>(const Fixed& other)const{
+	return (this->getRawBits() > other.getRawBits());
 }
+bool	Fixed::operator<(const Fixed& other)const{
+	return (this->getRawBits() < other.getRawBits());
+}
+bool	Fixed::operator>=(const Fixed& other)const{
+	return (this->getRawBits() >= other.getRawBits());
+}
+bool	Fixed::operator<=(const Fixed& other)const{
+	return (this->getRawBits() <= other.getRawBits());
+}
+bool	Fixed::operator==(const Fixed& other)const{
+	return (this->getRawBits() == other.getRawBits());
+}
+bool	Fixed::operator!=(const Fixed& other)const{
+	return (this->getRawBits() != other.getRawBits());
+}
+
+
+//Arithmetic Operators
+Fixed	Fixed::operator*(Fixed const &ref) const{
+	Fixed	res(this->toFloat() * ref.toFloat());
+	return (res);
+}
+Fixed	Fixed::operator+(Fixed const &ref) const{
+	Fixed	res(this->toFloat() + ref.toFloat());
+	return (res);
+}
+Fixed	Fixed::operator-(Fixed const &ref) const{
+	Fixed	res(this->toFloat() - ref.toFloat());
+	return (res);
+}
+Fixed	Fixed::operator/(Fixed const &ref) const{
+	Fixed	res(this->toFloat() / ref.toFloat());
+	return (res);
+}
+
+
+//Increment/Decrement
+Fixed	Fixed::operator++(Fixed const )
+
+
 
 Fixed::Fixed(const int n){
 	this->_num = n << this->_n;
-	std::cout << "Int constructor called" << std::endl;
+	// std::cout << "Int constructor called" << std::endl;
 }
 
 Fixed::Fixed(const float n){
 	_num = roundf( n * (1 << _n));
-	std::cout << "Float constructor called" << std::endl;
+	// std::cout << "Float constructor called" << std::endl;
 }
 
 int	Fixed::getRawBits() const{
@@ -56,12 +98,13 @@ Fixed&	Fixed::operator=(const Fixed &src){
 	return (*this);
 }
 
-Fixed::~Fixed()
-{
-	std::cout << "Destructor called" << std::endl;
-};
+Fixed::~Fixed(){};
 
 std::ostream&	operator<<(std::ostream& os, const Fixed& other){
 	os << other.toFloat();
 	return (os);
 }
+
+
+
+

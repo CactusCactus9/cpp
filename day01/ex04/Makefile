@@ -6,7 +6,7 @@
 #    By: abelkace <abelkace@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/15 11:27:36 by abelkace          #+#    #+#              #
-#    Updated: 2023/11/18 14:51:20 by abelkace         ###   ########.fr        #
+#    Updated: 2023/11/24 13:03:33 by abelkace         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ $(NAME): $(OBJS)
 	@$(CXX) $(OBJS) -o $@
 
 %.o: %.cpp files.hpp
-	$(CXX) $(CXXFLAGS) -o $@ -c $<
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
 	@rm -f $(OBJS)
