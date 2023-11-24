@@ -6,7 +6,7 @@
 /*   By: abelkace <abelkace@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 11:14:33 by abelkace          #+#    #+#             */
-/*   Updated: 2023/11/24 23:44:52 by abelkace         ###   ########.fr       */
+/*   Updated: 2023/11/24 23:56:12 by abelkace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,9 @@ std::cout << d / c << std::endl;
 
 std::cout << " *** \n";
 
-
+Fixed   x(9);
+Fixed   y(0);
+std::cout << "max;" << Fixed::max(x, y) << std::endl;
+std::cout << "min;" << Fixed::min(x, y) << std::endl;
 return 0;
 }
