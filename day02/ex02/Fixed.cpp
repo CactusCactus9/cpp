@@ -6,11 +6,13 @@
 /*   By: abelkace <abelkace@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 11:25:51 by abelkace          #+#    #+#             */
-/*   Updated: 2023/11/25 00:02:50 by abelkace         ###   ########.fr       */
+/*   Updated: 2023/11/25 14:42:00 by abelkace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+
+const int Fixed::_n = 8;
 
 Fixed::Fixed() : _num(0){
 }
@@ -78,7 +80,7 @@ Fixed	Fixed::operator--(int){
 
 //min-max
 Fixed& Fixed::min(Fixed &ref1, Fixed &ref2){
-	return (ref1 < ref2) ? ref1 : ref2; //we overload operators for objcs not pre defined types
+	return (ref1 < ref2) ? ref1 : ref2;
 }
 const Fixed&	Fixed::min(const Fixed &ref1, const Fixed &ref2){
 	return (ref1 < ref2) ? ref1 : ref2;
@@ -109,14 +111,14 @@ float	Fixed::toFloat(void)const{
 	return ((float)(this->getRawBits()) / (1 << this->_n));
 }
 
-// int		Fixed::toInt(void) const{
-// 	return ((int)roundf(this->_num >> this->_n));
-// }
+int		Fixed::toInt(void) const{
+	return ((this->_num >> this->_n));
+}
 
 
 Fixed::Fixed(const Fixed &obj)
 {
-	*this = obj;//same class..call Copy assignment operator called
+	*this = obj;
 }
 
 Fixed&	Fixed::operator=(const Fixed &src){

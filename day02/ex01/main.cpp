@@ -6,7 +6,7 @@
 /*   By: abelkace <abelkace@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 18:01:36 by abelkace          #+#    #+#             */
-/*   Updated: 2023/11/24 10:25:28 by abelkace         ###   ########.fr       */
+/*   Updated: 2023/11/25 11:20:15 by abelkace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,28 +28,3 @@ std::cout << "c is " << c.toInt() << " as integer" << std::endl;
 std::cout << "d is " << d.toInt() << " as integer" << std::endl;
 return 0;
 }
-
-
-
-// Default constructor called/
-// Int constructor called/
-// Float constructor called/
-// Copy constructor called/
-
-// Copy assignment operator called//for d
-// Float constructor called?????
-
-// Copy assignment operator called
-// Destructor called //dial a
-// a is 1234.43
-// b is 10
-// c is 42.4219
-// d is 10
-// a is 1234 as integer
-// b is 10 as integer
-// c is 42 as integer
-// d is 10 as integer
-// Destructor called
-// Destructor called
-// Destructor called
-// Destructor called

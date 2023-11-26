@@ -6,24 +6,26 @@
 /*   By: abelkace <abelkace@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 15:09:44 by abelkace          #+#    #+#             */
-/*   Updated: 2023/11/24 14:05:47 by abelkace         ###   ########.fr       */
+/*   Updated: 2023/11/25 14:58:11 by abelkace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+
+const int Fixed::_n = 8;
 
 Fixed::Fixed() : _num(0){
 	std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed(const int n){
-	this->_num = n << this->_n;
 	std::cout << "Int constructor called" << std::endl;
+	this->_num = n << this->_n;
 }
 
 Fixed::Fixed(const float n){
-	_num = roundf( n * (1 << _n));
 	std::cout << "Float constructor called" << std::endl;
+	_num = roundf( n * (1 << _n));
 }
 
 int	Fixed::getRawBits() const{
@@ -39,14 +41,14 @@ float	Fixed::toFloat(void)const{
 }
 
 int		Fixed::toInt(void) const{
-	return ((int)roundf(this->_num >> this->_n));
+	return (this->_num >> this->_n);
 }
 
 
 Fixed::Fixed(const Fixed &obj)
 {
 	std::cout << "Copy constructor called" << std::endl;
-	*this = obj;//same class..call Copy assignment operator called
+	*this = obj;
 }
 
 Fixed&	Fixed::operator=(const Fixed &src){

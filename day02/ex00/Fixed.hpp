@@ -6,7 +6,7 @@
 /*   By: abelkace <abelkace@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 16:55:13 by abelkace          #+#    #+#             */
-/*   Updated: 2023/11/20 14:57:16 by abelkace         ###   ########.fr       */
+/*   Updated: 2023/11/25 11:06:34 by abelkace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class	Fixed
 {
 private:
 	int					_num;
-	static const int	_n = 8;
+	static const int	_n;
 public:
 	Fixed();
 	Fixed(const Fixed &obj); 
@@ -30,14 +30,3 @@ public:
 };
 
 #endif
-//The key role of the copy constructor is to create a new object
-//initialized to the same state as the object being passed in. 
-//Even though the parameter is a reference, 
-//it's a different object in memory from the original object it references.
-
-// COPY CONSTROCTOR //allows the copy constructor to accept both constant and non-constant objects for copying.
-
-// COPY ASSIGNMENT OPERATOR//It's used when an object is already initialized and needs to be assigned the values of another object.
-
-//deep copy : copy values
-// shallow copy : copy address 
