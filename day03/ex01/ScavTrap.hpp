@@ -1,0 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: abelkace <abelkace@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/26 17:09:48 by abelkace          #+#    #+#             */
+/*   Updated: 2023/11/26 21:03:47 by abelkace         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
+#ifndef SCAVTRAP_H
+#define SCAVTRAP_H
+#include "ClapTrap.hpp"
+
+class ScavTrap: public ClapTrap{
+	public:
+		ScavTrap();
+		ScavTrap(const std::string& name);
+		ScavTrap(ScavTrap const &obj);
+		ScavTrap&   operator=(ScavTrap const &obj);
+		void		attack(const std::string& target);
+		void 		guardGate();
+		~ScavTrap();
+	
+	
+};
+#endif
