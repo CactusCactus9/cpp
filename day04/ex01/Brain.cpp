@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abelkace <abelkace@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/28 10:52:32 by abelkace          #+#    #+#             */
-/*   Updated: 2023/11/28 16:58:52 by abelkace         ###   ########.fr       */
+/*   Created: 2023/11/28 22:29:43 by abelkace          #+#    #+#             */
+/*   Updated: 2023/11/28 23:44:51 by abelkace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_H
-#define CAT_H
-#include <iostream>
-#include "Animal.hpp"
+#include "Brain.hpp"
 
-class Cat : public Animal{
-public:
-	Cat();
-	Cat(const Cat& obj);
-	Cat&	operator=(const Cat& obj);
-	std::string	getType()const;
-	void	makeSound();
-	~Cat();
-};
-#endif
+Brain::Brain(){
+	std::cout << "Brain default constructor called" << std::endl;
+}
+
+Brain::Brain(const Brain& obj){
+	*this = obj;
+}
+
+
+
+Brain::~Brain(){
+	std::cout << "Brain default deconstructor called" << std::endl;
+}

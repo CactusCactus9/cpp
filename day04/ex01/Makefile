@@ -6,13 +6,13 @@
 #    By: abelkace <abelkace@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/28 12:16:40 by abelkace          #+#    #+#              #
-#    Updated: 2023/11/28 17:50:16 by abelkace         ###   ########.fr        #
+#    Updated: 2023/11/28 23:20:45 by abelkace         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= DogCat
 
-SRCS	= main.cpp Cat.cpp Dog.cpp Animal.cpp WrongCat.cpp WrongAnimal.cpp
+SRCS	= main.cpp Cat.cpp Dog.cpp Animal.cpp Brain.cpp
 
 OBJS	= $(SRCS:.cpp=.o)
 
@@ -25,7 +25,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	@$(CXX) $(OBJS) -o $@
 
-%.o: %.cpp Cat.hpp Dog.hpp Animal.hpp WrongCat.hpp WrongAnimal.hpp
+%.o: %.cpp Cat.hpp Dog.hpp Animal.hpp Brain.hpp
 	$(CXX) $(CXXFLAGS) -o $@ -c $<
 
 clean:

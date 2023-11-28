@@ -6,15 +6,16 @@
 /*   By: abelkace <abelkace@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 10:55:23 by abelkace          #+#    #+#             */
-/*   Updated: 2023/11/28 17:26:30 by abelkace         ###   ########.fr       */
+/*   Updated: 2023/11/28 23:34:39 by abelkace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
 Cat::Cat() : Animal(){
-	_type = "Cat";
 	std::cout << "Cat default constructor called" << std::endl;
+	_type = "Cat";
+	this->_braincat = new Brain();
 }
 
 Cat::Cat(const Cat& obj) : Animal(obj){
@@ -40,4 +41,5 @@ void	Cat::makeSound(){
 
 Cat::~Cat(){
 	std::cout << "Cat default deconstructor called" << std::endl;
+	delete _braincat;
 }

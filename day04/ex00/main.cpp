@@ -6,34 +6,38 @@
 /*   By: abelkace <abelkace@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 11:08:24 by abelkace          #+#    #+#             */
-/*   Updated: 2023/11/28 12:50:34 by abelkace         ###   ########.fr       */
+/*   Updated: 2023/11/28 23:24:21 by abelkace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 #include "Dog.hpp"
+#include "WrongCat.hpp"
+#include "WrongAnimal.hpp"
 
- int main()
+
+int main()
 {
-	Animal	a;
-	Dog	b;
-	Dog	d(b);
-	Cat	c;
-
-	std::cout << b.getType() << std::endl;
-	std::cout << "fetgb"<<d.getType() << std::endl;
-	std::cout << c.getType() << std::endl;
-	
-
-	
-// const Animal* meta = new Animal();
-// const Animal* j = new Dog();
-// const Animal* i = new Cat();
-// std::cout << j->getType() << " " << std::endl;
-// std::cout << i->getType() << " " << std::endl;
-// i->makeSound(); //will output the cat sound!
-// j->makeSound();
-// meta->makeSound();
-// ...
-// return 0;
+Animal* meta/*pointer in parent class = uplasting*/ = new Animal(); // virtual allows oerriding the parent methods
+Animal* pp[2];
+Animal* j = new Dog(); //you create a virtual function table, and if a class has a virtual keyword, 
+Animal* i = new Cat(); //you will save the address pointed to by that function, then refer to that address when you call the function.
+WrongAnimal* k = new WrongAnimal();
+WrongAnimal* l = new WrongCat();
+std::cout << "what does a " << meta->getType() << " say " << std::endl;
+std::cout << "what does a " << i->getType() << " say " << std::endl;
+std::cout << "what does a " << j->getType() << " say " << std::endl;
+std::cout << "what does a " << k->getType() << " say " << std::endl;
+std::cout << "what does a " << l->getType() << " say " << std::endl;
+meta->makeSound();
+i->makeSound();
+j->makeSound();
+k->makeSound();
+l->makeSound();
+delete meta;
+delete i;//virtual destructor destructs derived then base
+delete j;
+delete k;
+delete l;
+return 0;
 }

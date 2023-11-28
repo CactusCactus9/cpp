@@ -6,15 +6,17 @@
 /*   By: abelkace <abelkace@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 09:37:47 by abelkace          #+#    #+#             */
-/*   Updated: 2023/11/28 17:27:32 by abelkace         ###   ########.fr       */
+/*   Updated: 2023/11/28 23:24:40 by abelkace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
 Dog::Dog() : Animal(){
-	_type = "Dog";
 	std::cout << "Dog default constructor called" << std::endl;
+	_type = "Dog";
+	this->_braindog = new Brain();
+	
 }
 
 Dog::Dog(const Dog& obj) : Animal(obj){
@@ -44,4 +46,5 @@ void	Dog::makeSound(){
 
 Dog::~Dog(){
 	std::cout << "Dog default deconstructor called" << std::endl;
+	delete _braindog;
 }

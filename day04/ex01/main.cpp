@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abelkace <abelkace@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/28 10:52:32 by abelkace          #+#    #+#             */
-/*   Updated: 2023/11/28 16:58:52 by abelkace         ###   ########.fr       */
+/*   Created: 2023/11/28 11:08:24 by abelkace          #+#    #+#             */
+/*   Updated: 2023/11/28 23:45:43 by abelkace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_H
-#define CAT_H
-#include <iostream>
-#include "Animal.hpp"
+#include "Cat.hpp"
+#include "Dog.hpp"
 
-class Cat : public Animal{
-public:
-	Cat();
-	Cat(const Cat& obj);
-	Cat&	operator=(const Cat& obj);
-	std::string	getType()const;
-	void	makeSound();
-	~Cat();
-};
-#endif
+
+
+int main()
+{
+	Animal  *p[4];
+	for (int i = 0; i < 4; i++){
+		if (i % 2 == 0)
+			p[i] = new Dog();
+		else
+			p[i] = new Cat();
+	}
+	for (int i = 0; i < 4; i++){
+			delete p[i];
+	}
+}
