@@ -6,7 +6,7 @@
 /*   By: abelkace <abelkace@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 10:55:23 by abelkace          #+#    #+#             */
-/*   Updated: 2023/11/28 23:34:39 by abelkace         ###   ########.fr       */
+/*   Updated: 2023/11/28 23:49:01 by abelkace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ std::string	Cat::getType()const{
 	return (this->_type);
 }
 
-void	Cat::makeSound(){
+void	Cat::makeSound(){   
 	std::cout << "miaw" << std::endl;
 }
 
