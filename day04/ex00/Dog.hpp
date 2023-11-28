@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abelkace <abelkace@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/26 17:09:48 by abelkace          #+#    #+#             */
-/*   Updated: 2023/11/27 02:46:34 by abelkace         ###   ########.fr       */
+/*   Created: 2023/11/28 09:35:33 by abelkace          #+#    #+#             */
+/*   Updated: 2023/11/28 12:59:48 by abelkace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_H
-#define SCAVTRAP_H
-#include "ClapTrap.hpp"
+#ifndef DOG_H
+#define DOG_H
+#include <iostream>
+#include "Animal.hpp"
 
-class ScavTrap: public ClapTrap{
-	public:
-		ScavTrap();
-		ScavTrap(const std::string& name);
-		ScavTrap(ScavTrap const &obj);
-		ScavTrap&   operator=(ScavTrap const &obj);
-		void		attack(const std::string& target);
-		void 		guardGate();
-		~ScavTrap();
+class Dog : public Animal{
+private:
+	std::string	_type;
+public:
+	Dog();
+	Dog(const Dog& obj);
+	Dog&				operator=(const Dog& obj);
+	void				makeSound();
+	const std::string	getType()const;
+	void				setType(const std::string &typ);
+	~Dog();
 };
 #endif

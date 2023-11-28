@@ -6,7 +6,7 @@
 /*   By: abelkace <abelkace@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 22:37:48 by abelkace          #+#    #+#             */
-/*   Updated: 2023/11/26 23:09:36 by abelkace         ###   ########.fr       */
+/*   Updated: 2023/11/27 03:21:07 by abelkace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ class	FragTrap : public ClapTrap
 		FragTrap(const std::string& name);//shallow copy
 		FragTrap(FragTrap const &obj);
 		FragTrap&	operator=(FragTrap const &other);
-		void highFivesGuys(void);
+		void		attack(const std::string& target);
+		void 		highFivesGuys(void);
 		~FragTrap();
 };
 

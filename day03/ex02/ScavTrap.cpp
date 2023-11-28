@@ -1,62 +1,62 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.cpp                                       :+:      :+:    :+:   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abelkace <abelkace@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/26 23:11:42 by abelkace          #+#    #+#             */
-/*   Updated: 2023/11/27 03:04:11 by abelkace         ###   ########.fr       */
+/*   Created: 2023/11/27 01:07:41 by abelkace          #+#    #+#             */
+/*   Updated: 2023/11/27 03:02:19 by abelkace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
 //---------Constructors---------------//
-FragTrap::FragTrap(){
+ScavTrap::ScavTrap() : ClapTrap(){
 	std::cout << "Derived class default constructer called" << std::endl;
 	setName("default");
 	setHitPoints(100);
-	setEnergyPoints(100);
-	setAttackDamage(30);
-}
-FragTrap::FragTrap(const std::string &name){
+	setEnergyPoints(50);
+	setAttackDamage(20);
+};
+ScavTrap::ScavTrap(const std::string &name){
 	std::cout << "Derived class parameterized constructor" << std::endl;
 	setName(name);
 	setHitPoints(100);
-	setEnergyPoints(100);
-	setAttackDamage(30);
+	setEnergyPoints(50);
+	setAttackDamage(20);
 }
-FragTrap::FragTrap(FragTrap const &obj){
-	std::cout << "copy constructor" << std::endl;
+ScavTrap::ScavTrap(ScavTrap const &obj){
+	std::cout << "Derived class copy constructor called" << std::endl;
 	*this = obj;
 }
 
 //---------copy assignment operator---------------//
-FragTrap&	FragTrap::operator=(FragTrap const &other){
+ScavTrap&	ScavTrap::operator=(ScavTrap const &obj){
 	std::cout << "derived class copy assignment operator called" <<std::endl;
-	if (this != &other)
+	if (this != &obj)
 	{
-		setName(other.getName());
-		setHitPoints(other.getHitPoint());
-		setEnergyPoints(other.getEnergyPoint());
-		setAttackDamage(other.getAttackDamage());
+		setName(obj.getName());
+		setHitPoints(obj.getHitPoint());
+		setEnergyPoints(obj.getEnergyPoint());
+		setAttackDamage(obj.getAttackDamage());
 	}
 	return (*this);
 }
 
 //---------Public members---------------//
-void	FragTrap::attack(const std::string& target){
+void	ScavTrap::attack(const std::string& target){
 	if (!getEnergyPoint() || !getHitPoint())
 		return ;
-	std::cout << "FragTrap " << getName() << " attacks " << target << ", causing " << getAttackDamage() << " points of damage and lost 1 energy point" << std::endl;
+	std::cout << "ScavTrap " << getName() << " attacks " << target << ", causing " << getAttackDamage() << " points of damage and lost 1 energy point" << std::endl;
 	setEnergyPoints(getEnergyPoint() - 1);
 }
-void FragTrap::highFivesGuys(void){
-	std::cout << "High five from FragTrap" << std::endl;
+void 		ScavTrap::guardGate(){
+	std::cout << "ScavTrap is now in Gate keeper mode" << std::endl;
 }
 
 //---------Deconstructor---------------//
-FragTrap::~FragTrap(){
+ScavTrap::~ScavTrap(){
 		std::cout << "derived class default deconstructor" << std::endl;
 }

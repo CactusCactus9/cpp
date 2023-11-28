@@ -5,14 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: abelkace <abelkace@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/11/26 22:33:36 by abelkace          #+#    #+#              #
-#    Updated: 2023/11/27 03:31:41 by abelkace         ###   ########.fr        #
+#    Created: 2023/11/28 12:16:40 by abelkace          #+#    #+#              #
+#    Updated: 2023/11/28 12:17:56 by abelkace         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= Frag
+NAME	= DogCat
 
-SRCS	= main.cpp ClapTrap.cpp FragTrap.cpp ScavTrap.cpp
+SRCS	= main.cpp Cat.cpp Dog.cpp Animal.cpp
 
 OBJS	= $(SRCS:.cpp=.o)
 
@@ -25,7 +25,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	@$(CXX) $(OBJS) -o $@
 
-%.o: %.cpp ClapTrap.hpp FragTrap.hpp ScavTrap.hpp
+%.o: %.cpp Cat.hpp Dog.hpp Animal.hpp
 	$(CXX) $(CXXFLAGS) -o $@ -c $<
 
 clean:

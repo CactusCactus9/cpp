@@ -6,7 +6,7 @@
 /*   By: abelkace <abelkace@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 22:15:25 by abelkace          #+#    #+#             */
-/*   Updated: 2023/11/26 16:46:51 by abelkace         ###   ########.fr       */
+/*   Updated: 2023/11/27 03:22:29 by abelkace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ class	ClapTrap
 		void 				attack(const std::string& target);
 		void 				takeDamage(unsigned int amount);
 		void 				beRepaired(unsigned int amount);
-		std::string			getName();
-		unsigned int		getHitPoint();
-		unsigned int		getEnergyPoint();
+		std::string			getName()const;
+		unsigned int		getHitPoint()const;
+		unsigned int		getEnergyPoint()const;
 		unsigned int		getAttackDamage()const;
 		~ClapTrap();
 };
