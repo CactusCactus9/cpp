@@ -12,7 +12,7 @@
 
 #include "WrongAnimal.hpp"
 
-WrongAnimal::WrongAnimal() : _type("bo3"){
+WrongAnimal::WrongAnimal() : _type("Wrong animal"){
 	std::cout << "WrongAnimal default constructor called" << std::endl;
 }
 
@@ -31,7 +31,7 @@ const std::string	WrongAnimal::getType()const{
 	return (this->_type);
 }
 
-void	WrongAnimal::makeSound(){
+void	WrongAnimal::makeSound()const{
 	std::cout << "hello" << std::endl;
 }
 

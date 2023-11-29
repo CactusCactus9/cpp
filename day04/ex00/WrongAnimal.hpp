@@ -6,7 +6,7 @@
 /*   By: abelkace <abelkace@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 17:33:27 by abelkace          #+#    #+#             */
-/*   Updated: 2023/11/28 17:47:20 by abelkace         ###   ########.fr       */
+/*   Updated: 2023/11/29 21:38:43 by abelkace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ public:
 	WrongAnimal(const WrongAnimal& obj);
 	WrongAnimal& operator=(const WrongAnimal& obj);
 	const std::string getType()const;
-	void	makeSound();
+	void	makeSound()const;
 	~WrongAnimal();
 };
 #endif

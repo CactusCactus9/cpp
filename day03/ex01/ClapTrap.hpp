@@ -6,7 +6,7 @@
 /*   By: abelkace <abelkace@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 17:08:30 by abelkace          #+#    #+#             */
-/*   Updated: 2023/11/27 01:23:39 by abelkace         ###   ########.fr       */
+/*   Updated: 2023/11/29 15:42:49 by abelkace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class	ClapTrap
 		unsigned int		_Hit;
 		unsigned int		_Energy;
 		unsigned int		_Attack;
+		int		*ptr;	
 	public:
 		ClapTrap();
 		ClapTrap(const std::string& name);

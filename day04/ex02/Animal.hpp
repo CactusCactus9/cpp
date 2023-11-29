@@ -6,7 +6,7 @@
 /*   By: abelkace <abelkace@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 09:16:08 by abelkace          #+#    #+#             */
-/*   Updated: 2023/11/29 21:39:13 by abelkace         ###   ########.fr       */
+/*   Updated: 2023/11/29 22:03:05 by abelkace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ public:
 	Animal(const Animal& obj);
 	Animal& operator=(const Animal& obj);
 	const std::string getType()const;
-	virtual void	makeSound()const;
+	virtual void	makeSound()const=0;
 	virtual ~Animal();
 };
 #endif

@@ -6,7 +6,7 @@
 /*   By: abelkace <abelkace@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 09:26:38 by abelkace          #+#    #+#             */
-/*   Updated: 2023/11/28 18:01:49 by abelkace         ###   ########.fr       */
+/*   Updated: 2023/11/29 21:37:08 by abelkace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ const std::string	Animal::getType()const{
 	return (this->_type);
 }
 
-void	Animal::makeSound(){
-	std::cout << "make noise" << std::endl;
+void	Animal::makeSound()const{
+	std::cout << "make noise" << std::endl;///The word means having many forms. It is the ability of a message(function / operator) to be displayed in more than one form
 }
 
 Animal::~Animal(){
