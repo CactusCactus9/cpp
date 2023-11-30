@@ -6,7 +6,7 @@
 /*   By: abelkace <abelkace@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 09:16:08 by abelkace          #+#    #+#             */
-/*   Updated: 2023/11/29 21:37:15 by abelkace         ###   ########.fr       */
+/*   Updated: 2023/11/30 08:21:58 by abelkace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ public:
 	Animal& operator=(const Animal& obj);
 	const std::string getType()const;
 	virtual void	makeSound()const;
-	virtual ~Animal();//virtual destructor frees memory space. virtual keywword calls base{2} and drived{1} classes destructors at run time 
+	virtual ~Animal();
 };
 #endif
 

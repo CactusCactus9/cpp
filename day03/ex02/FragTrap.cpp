@@ -6,7 +6,7 @@
 /*   By: abelkace <abelkace@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 23:11:42 by abelkace          #+#    #+#             */
-/*   Updated: 2023/11/27 03:04:11 by abelkace         ###   ########.fr       */
+/*   Updated: 2023/11/30 10:49:46 by abelkace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void FragTrap::highFivesGuys(void){
 	std::cout << "High five from FragTrap" << std::endl;
 }
 
-//---------Deconstructor---------------//
+//---------destructor---------------//
 FragTrap::~FragTrap(){
-		std::cout << "derived class default deconstructor" << std::endl;
+		std::cout << "derived class default destructor" << std::endl;
 }

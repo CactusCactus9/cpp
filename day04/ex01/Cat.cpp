@@ -6,7 +6,7 @@
 /*   By: abelkace <abelkace@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 10:55:23 by abelkace          #+#    #+#             */
-/*   Updated: 2023/11/29 22:12:14 by abelkace         ###   ########.fr       */
+/*   Updated: 2023/11/30 13:02:46 by abelkace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,8 @@ Cat&	Cat::operator=(const Cat& obj){
 		if (this->_braincat)
 			delete this->_braincat;
 		this->_braincat = new Brain(*(obj._braincat));//deep copy of data
-		// *(this->_braincat) = *(obj._braincat);///deep copy
 	}
 	return (*this);
-}
-
-std::string	Cat::getType()const{
-	return (this->_type);
 }
 
 void	Cat::makeSound()const{    
@@ -44,6 +39,6 @@ void	Cat::makeSound()const{
 }
 
 Cat::~Cat(){
-	std::cout << "Cat default deconstructor called" << std::endl;
+	std::cout << "Cat default destructor called" << std::endl;
 	delete _braincat;
 }

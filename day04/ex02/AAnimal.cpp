@@ -1,40 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   AAnimal.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abelkace <abelkace@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 09:26:38 by abelkace          #+#    #+#             */
-/*   Updated: 2023/11/29 21:39:08 by abelkace         ###   ########.fr       */
+/*   Updated: 2023/11/30 13:13:11 by abelkace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 
-Animal::Animal() : _type("animal"){
+AAnimal::AAnimal() : _type("animal"){
 	std::cout << "Animal default constructor called" << std::endl;
 }
 
-Animal::Animal(const Animal& obj){
+AAnimal::AAnimal(const AAnimal& obj){
 	std::cout << "Animal copy constructor called" << std::endl;
 	*this = obj;
 }
 
-Animal&	Animal::operator=(const Animal& obj){
+AAnimal&	AAnimal::operator=(const AAnimal& obj){
 	if (this != &obj)
 		this->_type = obj._type;
 	return (*this);
 }
 
-const std::string	Animal::getType()const{
+const std::string	AAnimal::getType()const{
 	return (this->_type);
 }
 
-void	Animal::makeSound()const{
+void	AAnimal::makeSound()const{
 	std::cout << "make noise" << std::endl;
 }
 
-Animal::~Animal(){
-	std::cout << "Animal default deconstructor called" << std::endl;
+AAnimal::~AAnimal(){
+	std::cout << "Animal default destructor called" << std::endl;
 }

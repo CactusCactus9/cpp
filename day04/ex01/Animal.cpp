@@ -6,7 +6,7 @@
 /*   By: abelkace <abelkace@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 09:26:38 by abelkace          #+#    #+#             */
-/*   Updated: 2023/11/29 21:39:08 by abelkace         ###   ########.fr       */
+/*   Updated: 2023/11/30 10:49:46 by abelkace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,5 @@ void	Animal::makeSound()const{
 }
 
 Animal::~Animal(){
-	std::cout << "Animal default deconstructor called" << std::endl;
+	std::cout << "Animal default destructor called" << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: abelkace <abelkace@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 10:52:32 by abelkace          #+#    #+#             */
-/*   Updated: 2023/11/29 21:38:12 by abelkace         ###   ########.fr       */
+/*   Updated: 2023/11/30 11:46:11 by abelkace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ public:
 	Cat();
 	Cat(const Cat& obj);
 	Cat&	operator=(const Cat& obj);
-	std::string	getType()const;
 	void	makeSound()const;
 	~Cat();
 };

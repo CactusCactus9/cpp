@@ -6,7 +6,7 @@
 /*   By: abelkace <abelkace@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 22:29:43 by abelkace          #+#    #+#             */
-/*   Updated: 2023/11/29 14:48:41 by abelkace         ###   ########.fr       */
+/*   Updated: 2023/11/30 12:58:04 by abelkace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ Brain&	Brain::operator=(const Brain& obj){
 	if (this != &obj)
 	{
 		for(int i = 0; i < 100; i++)
-			ideas[i] = obj.ideas[i];
+			this->ideas[i] = obj.ideas[i];
 	}
 	return (*this);
 }
 
 Brain::~Brain(){
-	std::cout << "Brain default deconstructor called" << std::endl;
+	std::cout << "Brain default destructor called" << std::endl;
 }

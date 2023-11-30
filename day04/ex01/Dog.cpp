@@ -6,7 +6,7 @@
 /*   By: abelkace <abelkace@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 09:37:47 by abelkace          #+#    #+#             */
-/*   Updated: 2023/11/29 21:55:13 by abelkace         ###   ########.fr       */
+/*   Updated: 2023/11/30 10:49:46 by abelkace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,6 @@ void	Dog::makeSound()const{
 }
 
 Dog::~Dog(){
-	std::cout << "Dog default deconstructor called" << std::endl;
+	std::cout << "Dog default destructor called" << std::endl;
 	delete _braindog;
 }

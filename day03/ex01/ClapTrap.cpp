@@ -6,7 +6,7 @@
 /*   By: abelkace <abelkace@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 17:08:51 by abelkace          #+#    #+#             */
-/*   Updated: 2023/11/29 17:26:07 by abelkace         ###   ########.fr       */
+/*   Updated: 2023/11/30 10:49:46 by abelkace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ void	ClapTrap::beRepaired(unsigned int amount){
 	std::cout <<  _Name << " gained " << amount << " hit points" << " and lost 1 energy point" << std::endl;
 }
 
-//---------Deconstructor---------------//
+//---------destructor---------------//
 ClapTrap::~ClapTrap(){
-	std::cout << "Deconstructor called" << std::endl;
+	std::cout << "destructor called" << std::endl;
 };

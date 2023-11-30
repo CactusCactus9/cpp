@@ -6,7 +6,7 @@
 /*   By: abelkace <abelkace@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 11:08:24 by abelkace          #+#    #+#             */
-/*   Updated: 2023/11/29 21:54:13 by abelkace         ###   ########.fr       */
+/*   Updated: 2023/11/30 12:55:51 by abelkace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@
 
 int main()
 {
-	Animal  *p[4];
+const Animal  *p[4];
 	for (int i = 0; i < 4; i++){
-		if (i < 4/2)
+		if (i < 2)
 			p[i] = new Dog();
 		else
 			p[i] = new Cat();

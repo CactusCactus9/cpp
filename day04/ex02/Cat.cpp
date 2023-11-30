@@ -6,7 +6,7 @@
 /*   By: abelkace <abelkace@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 10:55:23 by abelkace          #+#    #+#             */
-/*   Updated: 2023/11/29 21:28:22 by abelkace         ###   ########.fr       */
+/*   Updated: 2023/11/30 11:05:20 by abelkace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,6 @@ void	Cat::makeSound()const{
 }
 
 Cat::~Cat(){
-	std::cout << "Cat default deconstructor called" << std::endl;
+	std::cout << "Cat default destructor called" << std::endl;
 	delete _braincat;
 }

@@ -6,7 +6,7 @@
 /*   By: abelkace <abelkace@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 18:14:10 by abelkace          #+#    #+#             */
-/*   Updated: 2023/11/27 03:30:31 by abelkace         ###   ########.fr       */
+/*   Updated: 2023/11/30 10:49:46 by abelkace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void 		ScavTrap::guardGate(){
 	std::cout << "ScavTrap is now in Gate keeper mode" << std::endl;
 }
 
-//---------Deconstructor---------------//
+//---------destructor---------------//
 ScavTrap::~ScavTrap(){
-		std::cout << "derived class default deconstructor" << std::endl;
+		std::cout << "derived class default destructor" << std::endl;
 }
