@@ -6,7 +6,7 @@ Serializer::Serializer(const Serializer &obj){
 }
 Serializer  &Serializer::operator=(const Serializer &other){
 	if (this != &other){
-		*this = other; 
+		*this = other; //???
 	}
 	return (*this);
 }

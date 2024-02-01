@@ -2,23 +2,21 @@
 #include <exception>
 
 Base	*generate(void){
-	A	A_inst;
-	B	B_inst;
-	C	C_inst;
+	Base *p;
 	int	seed;
 
 	seed = std::rand() % 3;
 	switch (seed)
 	{
 		case 0:
-			return (new A);//polymorphism
+			p = new(std::nothrow) A;//polymorphism
 		case 1:
-			return (new B);//Because objects with an inheritance structure 
-			//have a base class in memory, it was possible to refer to the derived class as a pointer to the base class, so there was no problem when upcasting
+			p = new(std::nothrow) A;//Because objects with an inheritance structure 
+			//have a base class in memory, it was possible to refer 
+			//to the derived class as a pointer to the base class, so there was no problem when upcasting
 		case 2:
-			return (new C);
-		default:
-			NULL;
+			p = new(std::nothrow) A;
+		return NULL;
 	}
 }
 
@@ -30,16 +28,19 @@ void	identify(Base *p){
 	else if (dynamic_cast<C*>(p))
 		std::cout << "C" << std::endl;
 }
+//The dynamic_cast operator is mainly used to perform downcasting (converting a pointer/reference of a base class to a derived class). 
+//It ensures type safety by performing a runtime check to verify the validity of the conversion.
 
 void	identify(Base &p){
 	try{
 		if (dynamic_cast<A*>(&p))
 			std::cout << "A" << std::endl;
+		catch(const std::bad_cast){};
 		if (dynamic_cast<B*>(&p))
 			std::cout << "B" << std::endl;
+		catch(const std::bad_cast){};
 		if (dynamic_cast<C*>(&p))
 			std::cout << "C" << std::endl;
-	}
-	catch(const std::bad_cast){};
-		
+		catch(const std::bad_cast){};
+	}		
 }

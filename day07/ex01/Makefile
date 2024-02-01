@@ -1,6 +1,6 @@
-NAME	= Base
+NAME	= Iter
 
-SRCS	= main.cpp Base.cpp
+SRCS	= main.cpp
 
 OBJS	= $(SRCS:.cpp=.o)
 
@@ -13,7 +13,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	@$(CXX) $(OBJS) -o $@
 
-%.o: %.cpp Base.hpp A.hpp B.hpp C.hpp
+%.o: %.cpp Iter.hpp
 	$(CXX) $(CXXFLAGS) -o $@ -c $<
 
 clean:
