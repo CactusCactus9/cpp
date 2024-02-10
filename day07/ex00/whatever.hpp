@@ -21,5 +21,3 @@ T	max(T a, T b){
 }
 
 #endif
-
-//Templates in C++ provide a way to write generic code that can work with different data types without having to rewrite the code for each type.

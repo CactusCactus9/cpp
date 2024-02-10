@@ -13,7 +13,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	@$(CXX) $(OBJS) -o $@
 
-%.o: %.cpp templates.hpp
+%.o: %.cpp whatever.hpp
 	$(CXX) $(CXXFLAGS) -o $@ -c $<
 
 clean:

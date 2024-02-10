@@ -7,6 +7,7 @@ ScalarConverter::~ScalarConverter(){};
 ScalarConverter::ScalarConverter(const ScalarConverter &obj){
 	*this = obj;
 }
+
 ScalarConverter &ScalarConverter::operator=(const ScalarConverter &other){
 	if (this != &other){
 		*this = other;
@@ -14,17 +15,13 @@ ScalarConverter &ScalarConverter::operator=(const ScalarConverter &other){
 	return (*this);
 }
 
-// void	to_int(std::string &str){
-// 		std::cout << "int: " << atoi(str.c_str()) << std::endl;
-// }
-
 void	to_int(std::string str){
 	int		integer;
 	char	*endptr;
 
 	std::cout << "int: ";
 	integer = strtod(str.c_str(), &endptr);
-	if (str == "nan" || str == "+inf" || str == "-inf")
+	if (str == "nan" || str == "+inf" || str == "-inf"|| str == "+inff" || str == "-inff")
 		std::cout << "impossible" << std::endl;
 	else
 		std::cout << (static_cast<int>(integer)) << std::endl;
@@ -60,9 +57,6 @@ void	to_double(std::string &str){
 
 	}
 }
-//The static_cast operator is the most commonly used casting operator in C++. 
-//It performs compile-time type conversion and is mainly used for explicit conversions that are considered safe by the compiler. 
-//The static_cast can be used to convert between related types, such as numeric types or pointers in the same inheritance hierarchy.
 
 
 void	to_float(std::string &str){
@@ -103,10 +97,16 @@ void	to_char(std::string &str){
 	std::cout << "char: " ;
 	if (pseudo_literal(str))
 			std::cout << "impossible"<< std::endl;
-	else if (isprint(integer))
+
+	else if (integer >= 32 && integer <= 126){
+
 		std::cout << "'" << static_cast<char>(integer) << "'" << std::endl;
-	else
-		std::cout << "Non displayable" << std::endl;
+	}
+	else if (endptr[0] != '\0'){
+		std::cout <<  endptr  <<  std::endl;
+	}
+	else{
+		std::cout << "Non displayable" << std::endl;}
 }
 
 void	ScalarConverter::convert(std::string &str){

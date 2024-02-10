@@ -1,19 +1,19 @@
-NAME = Scalar
+NAME	= EasyFind
 
-SRCS = main.cpp ScalarConverter.cpp
+SRCS	= main.cpp
 
-OBJS = $(SRCS:.cpp=.o)
+OBJS	= $(SRCS:.cpp=.o)
 
-CXX = c++
+CXX	 = c++
 
-CXXFLAGS = -Wall -Werror -Wextra  -std=c++98
+CXXFLAGS = -Wall -Werror -Wextra  -std=c++11
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	@$(CXX) $(OBJS) -o $@
 
-%.o: %.cpp ScalarConverter.hpp
+%.o: %.cpp
 	$(CXX) $(CXXFLAGS) -o $@ -c $<
 
 clean:

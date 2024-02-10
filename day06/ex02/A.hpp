@@ -2,7 +2,6 @@
 #define A_HPP
 #include "Base.hpp"
 
-class	derivedA: public Base{
-
+class A: public Base{
 };
 #endif

@@ -1,8 +1,10 @@
 #ifndef ITER_HPP
 #define ITER_HPP
 
-template	<typename T, typename Funct>
-void	iter(T *arr, int len, Funct function){
+template	<typename T, typename Funct, typename Arg>
+void	iter(T *arr, int len, Funct (*function)(Arg)){
+	if (!arr || !function)
+		return ;
 	for (int i = 0; i < len; i++){
 		function(arr[i]);
 	}

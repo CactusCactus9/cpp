@@ -10,10 +10,5 @@ int	main(){
 	raw = Serializer::serialize(&data);
 	deser = Serializer::deserialize(raw);
 	std::cout << "Data number: " << data.num << std::endl;
-	std::cout << "raw: " << raw << std::endl;//adrress or not???????
 	std::cout << "Deserialized: " << deser->num << std::endl;
-
-//Allows casting between pointer types and between pointer and integer types.
-//The reinterpret_cast operator is used to convert the pointer to any other type of pointer. 
-//It does not perform any check whether the pointer converted is of the same type or not.
 }

@@ -8,14 +8,14 @@ typedef struct Data{
 }Data;
 
 class	Serializer{
-	private:// non initializable
+	private:
 		Serializer();
 		Serializer(const Serializer &obj);
 		Serializer	&operator=(const Serializer &other);
 		~Serializer();
 	public:
 		static uintptr_t	serialize(Data* ptr);
-		static Data*		deserialize(uintptr_t raw);//uintptr_t is safer than long to cast pointers
+		static Data*		deserialize(uintptr_t raw);
 };
 
 #endif

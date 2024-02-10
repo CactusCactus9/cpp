@@ -2,12 +2,10 @@
 
 Serializer::Serializer(){}
 Serializer::Serializer(const Serializer &obj){
-	*this = obj;
+	(void)obj;
 }
 Serializer  &Serializer::operator=(const Serializer &other){
-	if (this != &other){
-		*this = other; //???
-	}
+	(void)other;
 	return (*this);
 }
 Serializer::~Serializer(){}
