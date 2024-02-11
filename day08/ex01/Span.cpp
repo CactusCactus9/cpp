@@ -1,6 +1,5 @@
 #include "Span.hpp"
 #include <algorithm>
-
 //Span::Span(unsigned int N) : _vect(N){}//vector with N elements
 
 Span::Span(){};
@@ -13,33 +12,41 @@ Span    &Span::operator=(const Span &other){
 	}
 	return *this;
 }
+
+std::vector<int>	&Span::getVect(){
+			return (_vect);
+}
+
 void    Span::addNumber(int num){
 	if (_vect.size() >= _size)
 		throw("Error!");
 	_vect.push_back(num);
 }
 
-//  int Span::shortestSpan() {
-//         if (_vect.size() <= 1) {
-//             throw std::runtime_error("Cannot find span with less than 2 vect.");
-//         }
-//         std::sort(_vect.begin(), _vect.end());
-//         int shortest = _vect[1] - _vect[0];
-//         for (size_t i = 2; i < _vect.size(); ++i) {
-//             int span = _vect[i] - _vect[i - 1];
-//             if (span < shortest) {
-//                 shortest = span;
-//             }
-//         }
-//         return shortest;
-//     }
+int Span::shortestSpan() {
+	int	temp;
+	if (_vect.size() <= 1)
+		throw (std::runtime_error("Not enough elements!"));
+	sort(_vect.begin(), _vect.end());
+	int	result = _vect[1] - _vect[0];
+	for (unsigned long i = 0; i < _vect.size() - 2; i++){
+		temp = _vect[i + 1] - _vect[i];
+		if (temp < result)
+			result = temp;
+		}
+		return (result);
+}
 
-//     int Span::longestSpan() {
-//         if (_vect.size() <= 1) {
-//             throw std::runtime_error("Cannot find span with less than 2 vect.");
-//         }
-//         std::sort(_vect.begin(), _vect.end());
-//         return _vect.back() - _vect.front();
-//     }
+int Span::longestSpan() {
+	if (_vect.size() <= 1)
+		throw (std::runtime_error("Not enough elements!"));
+	sort(_vect.begin(), _vect.end());
+	int	result = _vect[_vect.size() - 1] - _vect[0];
+		return (result);
+}
 
+std::vector<int>	Span::insert_range(int val){
+	_vect.insert(_vect.begin(), 100, val);
+	return (_vect);
+}
 Span::~Span(){};
