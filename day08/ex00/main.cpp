@@ -2,10 +2,13 @@
 
 
 int	main(){
-	std::vector<int> vect = {0, 6, 8, -5, 6};
-	std::vector<int>::iterator result = easyfind(vect, 6);
-    if (result == vect.end())
-		std::cout << "ERROR!" << std::endl;
-	else
-		std::cout << "element ifound in : " << std::distance(vect.begin(), result) << std::endl;
-}
+	try{
+		std::vector<int> vect = {0, 8, -5};
+		std::vector<int>::iterator result = easyfind(vect, 0);
+		std::cout << "element is found in : " << std::distance(vect.begin(), result) << std::endl;
+	}
+	catch(...){
+		std::cout << "Element not found!" << std::endl;
+	};
+
+	}

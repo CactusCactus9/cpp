@@ -2,6 +2,7 @@
 
 int main(void)
 {
+    while (1)
     int a = 2;
     int b = 3;
     ::swap(a, b);//:: to call function in global namespace aka my code

@@ -1,6 +1,4 @@
 #include "Span.hpp"
-#include <algorithm>
-//Span::Span(unsigned int N) : _vect(N){}//vector with N elements
 
 Span::Span(){};
 Span::Span(unsigned int N) : _size(N){}
@@ -17,16 +15,16 @@ std::vector<int>	&Span::getVect(){
 			return (_vect);
 }
 
-void    Span::addNumber(int num){
+void	Span::addNumber(int num){
 	if (_vect.size() >= _size)
 		throw("Error!");
 	_vect.push_back(num);
 }
 
-int Span::shortestSpan() {
+int	Span::shortestSpan(){
 	int	temp;
 	if (_vect.size() <= 1)
-		throw (std::runtime_error("Not enough elements!"));
+		throw ("Not enough elements!");
 	sort(_vect.begin(), _vect.end());
 	int	result = _vect[1] - _vect[0];
 	for (unsigned long i = 0; i < _vect.size() - 2; i++){
@@ -37,16 +35,16 @@ int Span::shortestSpan() {
 		return (result);
 }
 
-int Span::longestSpan() {
+int	Span::longestSpan() {
 	if (_vect.size() <= 1)
-		throw (std::runtime_error("Not enough elements!"));
+		throw ("Not enough elements!");
 	sort(_vect.begin(), _vect.end());
 	int	result = _vect[_vect.size() - 1] - _vect[0];
 		return (result);
 }
 
-std::vector<int>	Span::insert_range(int val){
-	_vect.insert(_vect.begin(), 100, val);
+std::vector<int>	Span::insert_range(std::vector<int> v){
+	_vect.insert(_vect.begin(), v.begin(), v.end());
 	return (_vect);
 }
 Span::~Span(){};

@@ -47,8 +47,10 @@ int	main(){
 		a.signForm(*Robotomy);
 		a.executeForm(*Robotomy);
 		free(Robotomy);
+		while (1)
+			;
 	}
 	catch(std::exception &e){
-		std::cout << "Error caught: " << e.what() << std::endl; 
+		std::cout << "Error caught: " << e.what() << std::endl;
 	}
 }

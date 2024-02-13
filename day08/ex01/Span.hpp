@@ -1,14 +1,16 @@
 #ifndef SPAN_H
 #define SPAN_H
 #include <vector>
-#include <stdexcept>
+#include <exception>
+#include <iostream>
+#include <algorithm>
 
 class	Span{
 	private:
 		unsigned long		_size;
 		std::vector<int	>	_vect;
 	public:
-		Span();
+		Span();//no need to construct _vect once an object vector is made
 		Span(unsigned int N);
 		Span(const Span &obj);
 		Span	&operator=(const Span &other);
@@ -16,7 +18,7 @@ class	Span{
 		void	addNumber(int num);
 		int	shortestSpan();
 		int	longestSpan();
-		std::vector<int>	insert_range(int val);
+		std::vector<int>	insert_range(std::vector<int> v);
 		~Span();
 };
 
