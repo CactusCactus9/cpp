@@ -21,6 +21,10 @@ void	Span::addNumber(int num){
 	_vect.push_back(num);
 }
 
+unsigned long	&Span::getSize(){
+	return(this->_size);
+}
+
 int	Span::shortestSpan(){
 	int	temp;
 	if (_vect.size() <= 1)

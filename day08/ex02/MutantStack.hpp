@@ -22,10 +22,21 @@ class	MutantStack : public std::stack<T>{
 		iterator	begin(){
 			return (this->c.begin());
 		}
-		const iterator	begin()const{
+		iterator	end(){
+			return (this->c.end());
+		}
+		typedef typename std::stack<T>::container_type::iterator	iterator;
+		iterator	begin(){
 			return (this->c.begin());
 		}
 		iterator	end(){
+			return (this->c.end());
+		}
+		typedef typename std::stack<T>::container_type::const_iterator	iter;
+		iter	begin(){
+			return (this->c.begin());
+		}
+		iter	end(){
 			return (this->c.end());
 		}
 };

@@ -15,6 +15,16 @@ int main()
 			std::cout << vect[i] << " ";
 		}
 		std::cout << std::endl;
+		Span s(sp);
+		for(int i = 0; i < 10; i++){
+			s.addNumber(0);
+		}
+		const std::vector<int> &vec = s.getVect();
+		std::cout << "Vector s elements: ";
+		for (unsigned int i = 0; i < vec.size(); i++){
+			std::cout << vec[i] << " ";
+		}
+		std::cout << std::endl;
 		std::cout << "Shortest span : " << sp.shortestSpan() << std::endl;
 		std::cout << "Longuest span : " << sp.longestSpan() << std::endl;
 		std::vector<int>	ve;
