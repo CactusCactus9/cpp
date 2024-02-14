@@ -6,7 +6,7 @@ int main()
 	try{
 		Span sp = Span(100);
 		std::srand(std::time(0));
-		for(int i = 0; i < 100; i++){
+		for(int i = 0; i < 10; i++){
 			sp.addNumber(std::rand());
 		}
 		const std::vector<int> &vect = sp.getVect();
@@ -21,15 +21,15 @@ int main()
 		ve.push_back(7);
 		ve.push_back(-9);
 		ve.push_back(3);
-		sp.insert_range(ve);
+		sp.insert_range(ve.begin(), ve.end());
 		std::cout << "New vector elements: ";
 		for (unsigned int i = 0; i < vect.size(); i++){
 			std::cout << vect[i] << " ";
 		}
 		std::cout << std::endl;
 	}
-	catch (...){
-		std::cout << "la7" << std::endl;
+	catch (const char *e){
+		std::cout << e << std::endl;
 	}
 return 0;
 }

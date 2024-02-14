@@ -13,12 +13,12 @@ class	Span{
 		Span();//no need to construct _vect once an object vector is made
 		Span(unsigned int N);
 		Span(const Span &obj);
-		Span	&operator=(const Span &other);
+		Span				&operator=(const Span &other);
 		std::vector<int>	&getVect();
-		void	addNumber(int num);
-		int	shortestSpan();
-		int	longestSpan();
-		std::vector<int>	insert_range(std::vector<int> v);
+		void				addNumber(int num);
+		int					shortestSpan();
+		int					longestSpan();
+		std::vector<int>	insert_range(std::vector<int>::iterator beginn, std::vector<int>::iterator final);
 		~Span();
 };
 

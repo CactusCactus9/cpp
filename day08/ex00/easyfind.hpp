@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <algorithm>
-#include <vector>
+
 
 template <typename T> // template declaration and T is template parameter
 typename T::iterator	easyfind(T &first, int second){//typename T::iterator: to indicate that iterator is a type name

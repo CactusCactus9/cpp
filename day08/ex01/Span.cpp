@@ -1,6 +1,6 @@
 #include "Span.hpp"
 
-Span::Span(){};
+Span::Span(){}
 Span::Span(unsigned int N) : _size(N){}
 Span::Span(const Span &obj) : _size(obj._size), _vect(obj._vect){}
 Span    &Span::operator=(const Span &other){
@@ -12,7 +12,7 @@ Span    &Span::operator=(const Span &other){
 }
 
 std::vector<int>	&Span::getVect(){
-			return (_vect);
+	return (_vect);
 }
 
 void	Span::addNumber(int num){
@@ -43,8 +43,10 @@ int	Span::longestSpan() {
 		return (result);
 }
 
-std::vector<int>	Span::insert_range(std::vector<int> v){
-	_vect.insert(_vect.begin(), v.begin(), v.end());
+std::vector<int>	Span::insert_range(std::vector<int>::iterator beginn, std::vector<int>::iterator final){
+	if (_size < (unsigned long)(final - beginn) + _vect.size())
+		throw ("error");
+	_vect.insert(_vect.begin(), beginn, final);
 	return (_vect);
 }
 Span::~Span(){};
