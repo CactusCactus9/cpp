@@ -4,13 +4,14 @@
 #include <deque>
 #include <iostream>
 #include <list>
+#include <deque>
 
-template <typename T>
-class	MutantStack : public std::stack<T>{
+template <typename T,typename container = std::deque<T> >
+class	MutantStack : public std::stack<T, container>{
 	public:
 		MutantStack() : std::stack<T>(){};
-		MutantStack(size_t num) : std::stack<T>(num){};
-		MutantStack(const MutantStack &obj) : std::stack<T>(obj){};
+		MutantStack(size_t num) : std::stack<T, container>(num){};
+		MutantStack(const MutantStack &obj) : std::stack<T, container>(obj){};
 		MutantStack	&operator=(const MutantStack &other){
 			if (this != &other){
 				std::stack<T>::operator=(other);
@@ -18,33 +19,19 @@ class	MutantStack : public std::stack<T>{
 			return (*this);
 		};
 		~MutantStack(){};
-		typedef typename std::stack<T>::container_type::iterator	iterator;
+		typedef typename std::stack<T, container>::container_type::iterator	iterator;
 		iterator	begin(){
 			return (this->c.begin());
 		}
 		iterator	end(){
 			return (this->c.end());
 		}
-		typedef typename std::stack<T>::container_type::iterator	iterator;
-		iterator	begin(){
+		typedef typename std::stack<T, container>::container_type::const_iterator	iter;
+		iter	beginning(){
 			return (this->c.begin());
 		}
-		iterator	end(){
-			return (this->c.end());
-		}
-		typedef typename std::stack<T>::container_type::const_iterator	iter;
-		iter	begin(){
-			return (this->c.begin());
-		}
-		iter	end(){
+		iter	ending(){
 			return (this->c.end());
 		}
 };
 #endif
-
-
-
-
-//the standard library std::stack is a container adapter that provides a LIFO (Last In, First Out) data structure. 
-//It doesn't have its own set of member functions //
-//but rather provides an interface to the underlying container's member functions.

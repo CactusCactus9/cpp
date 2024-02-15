@@ -8,11 +8,10 @@ int	main(){
 		vect.push_back(2);
 		vect.push_back(-8);
 
-		std::vector<int>::iterator result = easyfind(vect, 2);
+		std::vector<int>::iterator result = easyfind(vect, 0);
 		std::cout << "element is found in : " << std::distance(vect.begin(), result) << std::endl;
 	}
-	catch(...){
-		std::cout << "Element not found!" << std::endl;
+	catch(const char *e){
+		std::cout << e << std::endl;
 	};
-
 	}
