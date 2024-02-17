@@ -47,57 +47,57 @@ int	main(int ac,char **av){
 	while (getline(std::cin, line)){
 		for (size_t i = 0; i < line.length(); i++){
 			if (line[i] != ' ' && line[i] != '-' && line[i] != '|' && line[i] != '.' && !isdigit(line[i])){
-				std::cerr << "Invalid input!" << std::endl;
+				std::cerr << "Invalid input1!" << std::endl;
 				return (1);
 			}
 			for (size_t i = 0; i < 4; i++){
 				if (!isdigit(line[i])){
-					std::cerr << "Invalid input!" << std::endl;
+					std::cerr << "Invalid input2!" << std::endl;
 					return (1);
 				}
 			}
 			if (line.length() >= 4 && line[4] != '-'){
-				std::cerr << "Wrong" << std::endl;
+				std::cerr << "Invalid input!3" << std::endl;
 				return (1);
 			}
 			for (size_t i = 5; i < 7; i++){
 				if (!isdigit(line[i])){
-					std::cerr << "Invalid input!" << std::endl;
+					std::cerr << "Invalid input4!" << std::endl;
 					return (1);
 				}
 			}
 			if (line.length() >= 7 && line[7] != '-'){
-				std::cerr << "Invalid input!" << std::endl;
+				std::cerr << "Invalid input5!" << std::endl;
 				return (1);
 			}
 			for (size_t i = 5; i < 7; i++){
 				if (!isdigit(line[i])){
-					std::cerr << "Invalid input!" << std::endl;
+					std::cerr << "Invalid input6!" << std::endl;
 					return (1);
 				}
 			}
 			if (line.length() >= 7 && line[7] != '-'){
-				std::cerr << "Invalid input!" << std::endl;
+				std::cerr << "Invalid input7!" << std::endl;
 				return (1);
 			}
 			for (size_t i = 8; i < 10; i++){
 				if (!isdigit(line[i])){
-					std::cerr << "Invalid input!" << std::endl;
+					std::cerr << "Invalid input8!" << std::endl;
 					return (1);
 				}
 			}
 			if (line.length() >= 10 && (line[10] != ' ' && line[10] != '\0')){
-				std::cerr << "Invalid input!" << std::endl;
+				std::cerr << "Invalid input9!" << std::endl;
 				return (1);
 			}
+
 			if (line.length() >= 11 && (line[11] != '|' || line[12] != ' ' || 
-			(!isdigit(line[13]) && line[13] >= 0 && std::atoi(&line[13]) <= 1000))){
-				std::cerr << "Wrong" << std::endl;
+			!isdigit(line[13]) || (line[13] < 0 || atoi(&line[13]) > 1000))){
+				std::cerr << "Invalid input!" << std::endl;
 				return (1);
 			}
 			
 		}
-		std::cout << "lxcdfvbg: " << line[13] << std::endl;
 		std::cout << "line: " << line << std::endl;
 		myFile << line << std::endl;
 		// std::cin.clear(); // Clear the error state
