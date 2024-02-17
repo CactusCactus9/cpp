@@ -1,12 +1,13 @@
 #include "Span.hpp"
 #include <iostream>
 
+
 int main()
 {
 	try{
 		Span sp = Span(100);
 		std::srand(std::time(0));
-		for(int i = 0; i < 10; i++){
+		for(int i = 0; i < 1; i++){
 			sp.addNumber(std::rand());
 		}
 		const std::vector<int> &vect = sp.getVect();
@@ -28,8 +29,8 @@ int main()
 		}
 		std::cout << std::endl;
 	}
-	catch (const char *e){
-		std::cout << e << std::endl;
+	catch (const std::invalid_argument &e){
+		std::cout << e.what() << std::endl;
 	}
 return 0;
 }

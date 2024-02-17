@@ -49,7 +49,7 @@ int	Span::longestSpan() {
 
 std::vector<int>	Span::insert_range(std::vector<int>::iterator beginn, std::vector<int>::iterator final){
 	if (_size < (unsigned long)(final - beginn) + _vect.size())
-		throw (std::invalid_argument("e!"));
+		throw (std::invalid_argument("Span is full!"));
 	_vect.insert(_vect.begin(), beginn, final);
 	return (_vect);
 }

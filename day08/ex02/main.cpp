@@ -12,7 +12,6 @@ std::cout << lst.size() << std::endl;
 lst.push_back(3);
 lst.push_back(5);
 lst.push_back(737);
-// //[...]
 lst.push_back(0);
 std::list<int>::iterator itt = lst.begin();
 std::list<int>::iterator itte = lst.end();
@@ -33,7 +32,6 @@ std::list<int> ss(lst);
     mstack.push(3);
     mstack.push(5);
     mstack.push(737);
-    // //[...]
     mstack.push(0);
     MutantStack<int>::iterator it = mstack.begin();
     MutantStack<int>::iterator ite = mstack.end();

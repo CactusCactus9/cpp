@@ -6,15 +6,15 @@
 #include <list>
 #include <deque>
 
-template <typename T,typename container = std::deque<T> >
-class	MutantStack : public std::stack<T, container>{
+template <typename T,typename container = std::deque<T>>
+class	MutantStack : public std::stack<T, >{
 	public:
-		MutantStack() : std::stack<T>(){};
+		MutantStack() : std::stack<T, container>(){};
 		MutantStack(size_t num) : std::stack<T, container>(num){};
 		MutantStack(const MutantStack &obj) : std::stack<T, container>(obj){};
 		MutantStack	&operator=(const MutantStack &other){
 			if (this != &other){
-				std::stack<T>::operator=(other);
+				std::stack<T, container>::operator=(other);
 			}
 			return (*this);
 		};
