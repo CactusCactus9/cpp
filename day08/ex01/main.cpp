@@ -7,9 +7,11 @@ int main()
 	try{
 		Span sp = Span(100);
 		std::srand(std::time(0));
-		for(int i = 0; i < 1; i++){
+		for(int i = 0; i < 10; i++){
 			sp.addNumber(std::rand());
 		}
+
+		
 		const std::vector<int> &vect = sp.getVect();
 		std::cout << "Vector elements: ";
 		for (unsigned int i = 0; i < vect.size(); i++){

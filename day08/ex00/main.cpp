@@ -13,5 +13,5 @@ int	main(){
 	}
 	catch(const char *e){
 		std::cout << e << std::endl;
-	};
+	}
 	}

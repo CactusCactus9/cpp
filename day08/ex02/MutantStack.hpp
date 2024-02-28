@@ -3,11 +3,9 @@
 #include <stack>
 #include <deque>
 #include <iostream>
-#include <list>
-#include <deque>
 
-template <typename T,typename container = std::deque<T>>
-class	MutantStack : public std::stack<T, >{
+template <typename T,typename container = std::deque<T> >
+class	MutantStack : public std::stack<T, container>{
 	public:
 		MutantStack() : std::stack<T, container>(){};
 		MutantStack(size_t num) : std::stack<T, container>(num){};

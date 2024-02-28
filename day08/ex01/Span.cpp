@@ -31,8 +31,8 @@ int	Span::shortestSpan(){
 		throw (std::invalid_argument("Not enough elements!"));
 	sort(_vect.begin(), _vect.end());
 	int	result = _vect[1] - _vect[0];
-	for (unsigned long i = 0; i < _vect.size() - 2; i++){
-		temp = _vect[i + 1] - _vect[i];
+	for (unsigned long i = 1; i < _vect.size(); ++i){
+		temp = _vect[i] - _vect[i - 1];
 		if (temp < result)
 			result = temp;
 		}
@@ -50,7 +50,7 @@ int	Span::longestSpan() {
 std::vector<int>	Span::insert_range(std::vector<int>::iterator beginn, std::vector<int>::iterator final){
 	if (_size < (unsigned long)(final - beginn) + _vect.size())
 		throw (std::invalid_argument("Span is full!"));
-	_vect.insert(_vect.begin(), beginn, final);
+	_vect.insert((_vect.begin()) + 1, beginn, final);
 	return (_vect);
 }
 Span::~Span(){};
